@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <title>taskaya 101</title>
+        <h1>HELLO PAPA ADOUL</h1>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('form').onsubmit =(event) => {
+                    event.preventDefault();
+               
+                    const task =document.querySelector('#task').value;
+
+                    
+
+                    
+
+                    if(task){
+                    const row = document.createElement('tr');
+                    const taskCell =document.createElement('td');
+                    taskCell.textContent = task;
+                    row.appendChild(taskCell);
+                    const actionCell = document.createElement('td');
+
+                    
+                     
+
+                    const editButton = document.createElement('button');
+                    editButton.textContent = 'Edit';
+                    editButton.onclick = () => {
+                        const newTask = prompt("Edit your task:", task);
+                        if (newTask) {
+                            taskCell.textContent = newTask;
+                        }
+                    };
+
+
+                            const deleteButton = document.createElement('button');
+                    deleteButton.textContent = 'Delete';
+                    deleteButton.onclick = () => {
+                        row.remove();
+                    };
+
+
+                        actionCell.appendChild(editButton);
+                    actionCell.appendChild(deleteButton);
+                    row.appendChild(actionCell);
+
+
+
+
+
+                    document.querySelector('#tasks').appendChild(row);
+
+                    document.querySelector('#task').value = '';
+                    }
+                    
+                   
+                };
+            
+
+
+            });
+        </script>
+        <style>
+            table {
+                border: 1px solid black;
+                width: 100%;
+                margin-top: 20px;
+                
+            }
+            th,td {
+                border :1px solid black;
+                padding: 10px;
+            }
+           <input type="text"> {
+                padding:10px;
+                border: 1px solid black; 
+            
+            }
+           <input type =submit> {
+            padding: 10px;
+            border:1 solid, black;
+           }
+        </style>
+    </head>
+    <body>
+        <h1>taskaya</h1>
+         
+
+        
+        <form>
+            <input id="task" placeholder="7oto mt5afsh" type="text">
+            <input type="submit" value="5oood">
+        </form>
+         <table>
+        <thead>
+            <tr>
+                <th>al taskaya</th>
+                <th>modification al taskaya</th>
+            </tr>
+        </thead>
+        <tbody id="tasks"> 
+           
+        </tbody>
+    </table>
+       
+    </body>
+    </html>
