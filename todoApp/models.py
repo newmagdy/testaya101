@@ -5,3 +5,10 @@ class Task(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Info(models.Model):
+    name = models.CharField(max_length=255)  # String column with a max length of 255
+
+    def __str__(self):
+        return self.name
